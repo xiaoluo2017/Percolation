@@ -17,7 +17,7 @@ public class PercolationStats {
                 int row = StdRandom.uniform(n) + 1;
                 int col = StdRandom.uniform(n) + 1;
                 p.open(row, col);
-        }
+            }
             res[i] = (double)p.numberOfOpenSites() / (n * n);
         }
         // perform trials independent experiments on an n-by-n grid
@@ -35,7 +35,7 @@ public class PercolationStats {
 	
     public double confidenceLo() {
         return StdStats.mean(res) - 1.96 * StdStats.stddev(res) / Math.sqrt(trials);
-        // low  endpoint of 95% confidence interval
+        // low endpoint of 95% confidence interval
     }
 	
     public double confidenceHi() {
@@ -44,6 +44,7 @@ public class PercolationStats {
     }
 	
     public static void main(String[] args) {
+        
         // test client (described below)
     }
 }
