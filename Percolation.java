@@ -1,14 +1,14 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
-public class Percolation{
-  private int n;
+public class Percolation {
+	private int n;
 	private int num;
 	private boolean[][] per;
 	private WeightedQuickUnionUF w;
 	private WeightedQuickUnionUF w2;
 	
 	public Percolation(int n) {
-		if(n <= 0){
+		if (n <= 0) {
 			throw new IllegalArgumentException();
 		}
 		this.n = n;
@@ -65,32 +65,33 @@ public class Percolation{
 	}
 	
 	public boolean isOpen(int row, int col) {
-		if(row <= 0 || row > n || col <= 0 || col > n){
+		if (row <= 0 || row > n || col <= 0 || col > n) {
 			throw new IndexOutOfBoundsException();
 		}
 		return per[row - 1][col - 1];
-
-		// is site (row, col) open?
+		// decide if site (row, col) is open
 	}
+	
 	public boolean isFull(int row, int col) {
 		if (row <= 0 || row > n || col <= 0 || col > n) {
 			throw new IndexOutOfBoundsException();
 		}
 		return w.connected(0, index(row, col));
-		
-		// is site (row, col) full?
+		// decide if site (row, col) is full
 	}
+	
 	public int numberOfOpenSites() {
 		return num;
 		// number of open sites
 	}
+	
 	public boolean percolates() {
 		return w2.connected(0, n * n + 1);
-		// does the system percolate?
+		// decide if the system percolate
 	}
 
 	public static void main(String[] args) {
 		
-		// test client (optional)
+		// test client
 	}
 }
