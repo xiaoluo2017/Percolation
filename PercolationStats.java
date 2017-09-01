@@ -5,7 +5,7 @@ public class PercolationStats {
 	private int trials;
 	private double[] res;
 	
-	public PercolationStats(int n, int trials){
+	public PercolationStats(int n, int trials) {
 		if (n <= 0 || trials <= 0) {
 			throw new IllegalArgumentException();
 		}
@@ -18,7 +18,7 @@ public class PercolationStats {
 				int col = StdRandom.uniform(n) + 1;
 				p.open(row, col);
 			}
-			res[i] = (double)p.numberOfOpenSites()/(n * n);
+			res[i] = (double)p.numberOfOpenSites() / (n * n);
 		}
 		// perform trials independent experiments on an n-by-n grid
 	}
